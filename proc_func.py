@@ -3,6 +3,8 @@ from skimage import img_as_float
 
 
 def procImageUsingKernel(image, kernel, const=0):
+
+
     image = img_as_float(image)
     const = const / 255.
 
@@ -25,6 +27,8 @@ def procImageUsingKernel(image, kernel, const=0):
                         pixel = image[pixel_y, pixel_x]
 
                     pos = (ky + k_height // 2, kx + k_width // 2)
+                    # print ky + k_height // 2
+                    # exit()
                     weight = kernel[pos[1], pos[0]]
 
                     weighted_pixel_sum += pixel * weight
@@ -34,4 +38,5 @@ def procImageUsingKernel(image, kernel, const=0):
             filtered[y, x] = np.clip(weighted_pixel_sum, 0, 1)
 
     # dtype must unsigned int
-    return (filtered * 255).astype('uint8')
+    return (filtered * 255).astype(np.uint8)
+
