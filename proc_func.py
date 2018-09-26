@@ -40,3 +40,5 @@ def procImageUsingKernel(image, kernel, const=0):
     # dtype must unsigned int
     return (filtered * 255).astype(np.uint8)
 
+
+# https://docs.google.com/presentation/d/1tRkyy6iL4H1yhWBVZXNvtt1A1yU8GSiDH7RphXvIvpc/edit?usp=sharing
