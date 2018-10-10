@@ -10,7 +10,6 @@ def procImageUsingKernel(image, kernel, const=0):
 
     i_height, i_width = image.shape[0], image.shape[1]
     k_width, k_height = kernel.shape[0], kernel.shape[1]
-
     filtered = np.zeros_like(image)
 
     for y in range(i_height):
@@ -40,5 +39,12 @@ def procImageUsingKernel(image, kernel, const=0):
     # dtype must unsigned int
     return (filtered * 255).astype(np.uint8)
 
+def procTest(image, kernel):
+    image = img_as_float(image)
+    i_height, i_width = image.shape[0], image.shape[1]
+    print image.shape
+
+    for y in range(i_height):
+        print y
 
 # https://docs.google.com/presentation/d/1tRkyy6iL4H1yhWBVZXNvtt1A1yU8GSiDH7RphXvIvpc/edit?usp=sharing

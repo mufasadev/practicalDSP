@@ -1,7 +1,6 @@
 from skimage import img_as_float
 from skimage.io import imread, imshow, show
 import plot_img_and_hist
-import numpy as np
 
 img = imread('/home/avelts/Desktop/krsu/images/image_1.png')
 # img.setflags(write=1)

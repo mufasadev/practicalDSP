@@ -1,7 +1,7 @@
 import numpy as np
 import filters
 from skimage.io import imread, imshow, show
-from proc_func import procImageUsingKernel
+from proc_func import procImageUsingKernel, procTest
 from skimage.color import rgb2gray
 from median_proc import median
 import cv2
@@ -61,11 +61,16 @@ kernel_gaussian = np.array([[1, 4, 6, 4, 1],
 # n = int(input('matrix size (an odd number): '))
 # matrix = np.array([[1.] * n] * n) / (n * n)
 # print matrix
-img = imread('images/a_h_1.png')
-
+img = imread('images/test_1_bw.png')
+matrix = np.array([[1, 2, 1],
+                      [2, 4, 2],
+                      [1, 2, 1]])
 imshow(img)
 show()
 #
+
+imshow(procTest(img, matrix))
+show()
 
 # imshow(procImageUsingKernel(img, matrix))
 # show()
